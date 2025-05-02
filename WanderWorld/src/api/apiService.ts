@@ -28,3 +28,13 @@ export const fetchAllCountries = async (): Promise<Country[]> => {
     throw error;
   }
 };
+
+export const fetchCountryByName = async (name: string): Promise<Country[]> => {
+  try {
+    const response = await axios.get<Country[]>(`${BASE_URL}/name/${name}`);
+    return response.data;
+  } catch (error) {
+    console.error(`Error fetching country ${name}:`, error);
+    throw error;
+  }
+};

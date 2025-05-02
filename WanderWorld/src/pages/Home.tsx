@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { fetchAllCountries, Country } from '../api/apiService';
+import { fetchAllCountries, fetchCountryByName, Country } from '../api/apiService';
+import SearchBar from '../components/SearchBar';
 import CountryCard from '../components/CountryCard';
 
 const Home: React.FC = () => {
@@ -19,10 +20,27 @@ const Home: React.FC = () => {
     getCountries();
   }, []);
 
+  // Handle searching by name
+  const handleSearch = async (searchText: string) => {
+    if (searchText.trim() === '') {
+      const data = await fetchAllCountries();
+      setCountries(data);
+    } else {
+      try {
+        const data = await fetchCountryByName(searchText);
+        setCountries(data);
+      } catch (error) {
+        console.error('Error in search:', error);
+        setCountries([]);
+      }
+    }
+  };
+
   return (
     <div className="container mx-auto px-4 py-4">
-      <h1 className="text-3xl font-bold mb-4 text-center">Wander World</h1>
+      <h1 className="text-3xl font-bold mb-4 text-center">GlobeTrotter</h1>
       <div className="mb-4 flex flex-col md:flex-row md:justify-between gap-4">
+        <SearchBar onSearch={handleSearch} />
       </div>
       {countries.length === 0 ? (
         <p>No countries found.</p>
