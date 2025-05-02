@@ -55,7 +55,7 @@ const Home: React.FC = () => {
 
   return (
     <div className="container mx-auto px-4 py-4">
-      <h1 className="text-3xl font-bold mb-4 text-center">GlobeTrotter</h1>
+      <h1 className="text-3xl font-bold mb-4 text-center">Wander World</h1>
       <div className="mb-4 flex flex-col md:flex-row md:justify-between gap-4">
         <SearchBar onSearch={handleSearch} />
         <FilterOptions onFilter={handleFilter} />

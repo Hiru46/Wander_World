@@ -48,3 +48,13 @@ export const fetchCountriesByRegion = async (region: string): Promise<Country[]>
     throw error;
   }
 };
+
+export const fetchCountryByCode = async (code: string): Promise<Country[]> => {
+  try {
+    const response = await axios.get<Country[]>(`${BASE_URL}/alpha/${code}`);
+    return response.data;
+  } catch (error) {
+    console.error(`Error fetching country with code ${code}:`, error);
+    throw error;
+  }
+};
