@@ -52,8 +52,10 @@ Wander World fetches country data using: 🌍 REST Countries API
 ✅ Tailwind CSS – Modern and responsive styling. ✅ Framer Motion – Smooth animations for interactive elements. ✅ Dark Mode Ready – User-friendly design for all screen sizes.
 
 📞 Contact & Contribution
-🔹 Found a bug or want to contribute? Feel free to submit a pull request! 🚀 📧 Contact Us: your-email@example.com
+🔹 Found a bug or want to contribute? Feel free to submit a pull request! 🚀 📧 Contact Us: hiranthathsara9@gmail.com
 
 🔗 GitHub Repository: Wander World
+
+    Deployment Link: https://wander-world-b5b1e.web.app/
 
 🌟 Happy Exploring with Wander World! 🌟
